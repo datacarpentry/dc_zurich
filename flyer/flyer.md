@@ -26,9 +26,7 @@ __Preliminary schedule:__
 | Day 2 morning:      |  Introduction to R       |
 | Day 2 afternoon:       |  Data analysis and visualization in R     |
 | Day 3 morning:      | Version control with Git (9am -12 pm, and 1-2pm)        |
-| Day 3 afternoon:      | Group projects        |
-|  Day 4 morning:      |  Working with science application programming interfaces (APIs) (9am -12 pm)      |
-| Day 4 afternoon:      |  Group projects         |
+| Day 3 afternoon:      | Working with science application programming interfaces (APIs)       |
 
 ## Registration
 
