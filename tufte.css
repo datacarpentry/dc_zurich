@@ -135,6 +135,10 @@ pre.code { padding: 0 2em;
                          vertical-align: baseline;
                          position: relative; }
 
+p.small {
+  font-size: 95%;
+}                         
+
 @media screen and (max-width: 600px) { .sidenote, .marginnote { width: 25%;
                                                                 margin-right: -35%; }}
 @media screen and (max-width: 400px) { .sidenote, .marginnote { display:none; }}
