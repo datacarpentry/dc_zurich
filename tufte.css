@@ -73,6 +73,12 @@ article { position: relative;
 section { padding-top: 1rem;
           padding-bottom: 1rem; }
 
+/*.map {
+  padding-left: 0px;
+margin-left : -80px;
+  width: 100%;
+}
+*/
 p { font-size: 1.4rem;
     line-height: 2rem;
     margin-top: 1.4rem;
@@ -113,7 +119,8 @@ p, footer, pre.code { width: 55%; }
         font-size: 1rem;
         line-height: 1.6; }
 
-pre.code { padding: 0 2em; }
+pre.code { padding: 0 2em;
+          background-color: #f9f9f7; }
 
 .fullwidth { max-width: 95%; } 
 
