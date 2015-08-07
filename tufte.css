@@ -1,9 +1,5 @@
-/*@font-face { font-family: ETBembo;
-             src: url("ETBembo-RomanLF.ttf"); }*/
-
-@font-face {
-  font-family: 'Cardo', serif;
-}
+@font-face { font-family: ETBembo;
+             src: url("ETBembo-RomanLF.ttf"); }
 
 html { font-size: 11px; }
 
