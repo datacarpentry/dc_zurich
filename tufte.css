@@ -39,10 +39,12 @@ h3 { font-style: italic;
      margin-bottom: 0;
      line-height: 1; }
 
-subtitle { font-style: italic;
+subtitle { 
+           font-family: 'Cardo', serif;
+          /*font-style: italic;*/
            margin-top: 1rem;
            margin-bottom: 1rem;
-           font-size: 1.8rem;
+           font-size: 1.4rem;
            display: block;
            line-height: 1; }
 
