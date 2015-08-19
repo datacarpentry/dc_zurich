@@ -184,7 +184,9 @@ data, leading to problems down the road.
     wasn't
   - drop it if it's a structural missing data (measurement that can't be made:
     e.g., count of pregnant males)
-- how to code it?
+	- how to code it?
+
+![](white_table.jpg)
 
 # Formating data -- Use at your own risk (but you are also putting others at risk)
 
