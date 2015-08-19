@@ -115,6 +115,26 @@ scanning easier. One way of organizing is trying to answer the question:
     contiguous. Rows can be ordered by first variable, breaking ties with the
     second and subsequent fixed variables.
 
+> ## Challenge
+>
+> We're going to take a messy version of the survey data and clean it up.
+>
+> - Download the data by clicking on [http://datacarpentry.github.io/dc_zurich/data/survey_data_tabs.xls](http://datacarpentry.github.io/dc_zurich/data/survey_data_tabs.xls)
+>
+> - Open up the data in a spreadsheet program
+>
+> - You can see that there are two tabs. Two field assistants conducted the surveys, one
+> in 2013 and one in 2014, and they both kept track of the data in their own way. Now
+> you're the person in charge of this project and you want to be able to start doing
+> statistics with the data.
+>
+> - With the person next to you, work on the messy data so that a computer will
+> be able to understand it. Clean up the 2013 and 2014 tabs, and put them all together
+> in one spreadsheet.
+
+> After you go through this exercise, we'll discuss as a group what you think was wrong
+> with this data and how you fixed it.
+
 
 ## Tidying messy datasets
 
