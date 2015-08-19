@@ -4,7 +4,7 @@ title: Visualizing data with ggplot2
 author: Data Carpentry contributors
 ---
 
-```{r, echo=FALSE, results='hide'}
+```{r, echo=FALSE, results='hide', message=FALSE}
 knitr::opts_chunk$set(results='hide', fig.path='../img/ggplot2-',
                       warning = FALSE,
                       fig.keep = 'last',
@@ -136,7 +136,7 @@ ggplot(surveys_complete,
 Visualising the distribution of weight within each species.
 
 ```{r}
-ggplot(surveys_complete, aes(x = species_id, y = weight)) +
+ggplot(subset(surveys_complete, !is.na(weight)), aes(x = species_id, y = weight)) +
   geom_boxplot()
 ```
 
@@ -144,30 +144,30 @@ By adding points to boxplot, we can see particular measurements and the
 abundance of measurements.
 
 ```{r}
-ggplot(surveys_complete, aes(x = species_id, y = weight)) +
+ggplot(subset(surveys_complete, !is.na(weight)), aes(x = species_id, y = weight)) +
   geom_point(alpha=0.3, color="tomato", position = "jitter") +
   geom_boxplot(alpha=0) + coord_flip()
 ```
 
 > ### Challenge
 >
-> Create boxplot for `hindfoot_length`, and change the color of the points.
-> Replace the boxplot by a violin plot
-> Add the layer `coord_flip()`
+> * Create boxplot for `hindfoot_length`, and change the color of the points.
+> * Replace the boxplot by a violin plot
+> * Add the layer `coord_flip()`
 
 ## Faceting
 
 ```{r}
-ggplot(surveys_complete, aes(species_id, weight)) +
+ggplot(subset(surveys_complete, !is.na(weight)), aes(species_id, weight)) +
   geom_point(alpha=0.3, color="tomato", position = "jitter") +
   geom_boxplot(alpha=0) + coord_flip() + facet_wrap( ~ sex)
 ```
 
 > ### Challenge
 >
-> Modify the data frame so we only look at males and females
-> Change the colors, so points for males and females are different
-> Change the data frame to only plot three species of your choosing
+> * Modify the data frame so we only look at males and females
+> * Change the colors, so points for males and females are different
+> * Change the data frame to only plot three species of your choosing
 
 ```{r}
 ggplot(subset(surveys_complete, species_id %in% c("DO", "DM", "DS") & sex %in% c("F", "M")),
