@@ -1,0 +1,53 @@
+---
+title: The mammals of Portal, Arizona in `r year`
+author: your name
+date: August 20th, 2015
+output: html_document
+---
+
+```{r setup, echo=FALSE, message=FALSE}
+year <- 1998
+library(RSQLite)
+library(ggplot2)
+library(dplyr)
+path_database <- "portal_mammals.sqlite"
+conn <- dbConnect(drv = SQLite(), dbname = path_database)
+n_ind <- dbGetQuery(conn,  paste("SELECT COUNT(*) FROM surveys WHERE year IS", year))
+year_data <- dbGetQuery(conn,
+                        paste("SELECT surveys.year, surveys.month, surveys.day, surveys.species_id, surveys.sex,
+                                      surveys.hindfoot_length, surveys.weight,
+                                      species.genus, species.species, species.taxa FROM surveys
+                               JOIN species ON species.species_id = surveys.species_id
+                               WHERE year IS",  year))
+```
+
+----
+
+In `r year`, `r n_ind` individuals were collected. At least,
+`r sum(year_data$weight, na.rm=TRUE)/1000` kg of animals were collected with an average
+weight of `r sprintf("%.2f", mean(year_data$weight, na.rm=TRUE))` g.
+
+The data looks like this:
+
+```{r head_data}
+head(year_data)
+```
+
+Here is the taxa that were collected:
+
+```{r barplot, echo=FALSE}
+ggplot(year_data, aes(x = taxa, fill = taxa)) + geom_bar()
+```
+
+Here is how abundant each species was throughout the year.
+
+```{r timeseries, echo=FALSE}
+year_data %>%
+  filter(!is.na(weight)) %>%
+  filter(species_id %in% c("DM", "DS", "DO")) %>%
+  mutate(date = as.Date(sprintf("%04d-%02d-%02d", year, month, day))) %>%
+  group_by(date, species_id) %>%
+  tally %>%
+  ggplot(aes(x = date,  y = n, colour = species_id)) +
+  geom_line()
+```
