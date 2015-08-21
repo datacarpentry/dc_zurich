@@ -1,5 +1,5 @@
 ---
-title: The mammals of Portal, Arizona in 
+title: The mammals of Portal, Arizona
 author: your name
 date: August 20th, 2015
 output: html_document
