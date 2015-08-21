@@ -1,18 +1,21 @@
 ---
-title: The mammals of Portal, Arizona in `r year`
+title: The mammals of Portal, Arizona in 
 author: your name
 date: August 20th, 2015
 output: html_document
 ---
 
 ```{r setup, echo=FALSE, message=FALSE}
-year <- 1998
+year <- 2000
 library(RSQLite)
 library(ggplot2)
 library(dplyr)
 path_database <- "portal_mammals.sqlite"
 conn <- dbConnect(drv = SQLite(), dbname = path_database)
-n_ind <- dbGetQuery(conn,  paste("SELECT COUNT(*) FROM surveys WHERE year IS", year))
+
+n_ind <- dbGetQuery(conn,
+                    paste("SELECT COUNT(*) FROM surveys WHERE year IS", year))
+
 year_data <- dbGetQuery(conn,
                         paste("SELECT surveys.year, surveys.month, surveys.day, surveys.species_id, surveys.sex,
                                       surveys.hindfoot_length, surveys.weight,
